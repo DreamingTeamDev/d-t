@@ -1,14 +1,65 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Feedback</title>
+    <link rel="icon" href="img/favicon.png?v=2" type="image/x-icon">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
+
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <div class="container">
+      <section class="section_form">
+        <div class="wrap">
+          <div class="wrapper">
+            <img
+              class="img"
+              src="./img/logo.png"
+              width="70px"
+              height="70px"
+              alt="logo"
+            />
+            <h2 class="subtitle">
+              Dreaming
+              <br />
+              team
+            </h2>
+          </div>
+          <form id="feed-form">
+            <label for="name"></label>
+            <input id="name" name="name" required placeholder="Name" type="text" maxlength="30" title="Напишите ваше имя до 30 символов" />
+            
+            <label for="email"></label>
+            <input id="email" name="email" required placeholder="E-mail" type="email" title="Напишите свой email"/>
+           
+            <label for="phone"></label>
+            <input id="phone"
+            name="phone"
+            required
+            placeholder="Phone number"
+            type="tel"
+            title="Оставьте свой номер телефона в формате +380XXXXXXXXX."
+            pattern="\+380[0-9]{9}"
+          />
+          <label for="message"></label>
+            <textarea
+            id="message"
+              name="message"
+              rows="5"
+              cols="6"
+              placeholder="Message"
+              title="Здесь вы можете написать нам письмо"
+              minlength="10" maxlength="500"
+              required
+            ></textarea>
+            <button type="submit" class="button_submit">SEND</button>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script src="js/feedback.js"></script>
   </body>
 </html>
