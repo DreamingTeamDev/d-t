@@ -1,3 +1,5 @@
+'use strict';
+
 const form = document.getElementById('feed-form');
 
 const formFields = {
@@ -29,7 +31,7 @@ function handleFormSubmitError(error) {
 }
 
 // Функция для отправки формы
-async function submitForm(event) {
+function submitForm(event) {
   event.preventDefault();
 
   const formData = {
@@ -40,7 +42,7 @@ async function submitForm(event) {
   };
 
   try {
-    const response = await axios.post('https://m-ojdg.onrender.com/api/feedback', formData);
+    const response = axios.post('https://m-ojdg.onrender.com/api/feedback', formData);
     handleFormSubmitSuccess(response);
   } catch (error) {
     handleFormSubmitError(error);
@@ -52,17 +54,17 @@ form.addEventListener('submit', submitForm);
 
 // Интерсепторы axios
 axios.interceptors.request.use(function logRequestInterceptor(config) {
-    console.log('Request Interceptor:', config);
-    return config;
-    });
-    
-    axios.interceptors.response.use(
-    function logResponseInterceptor(response) {
+  console.log('Request Interceptor:', config);
+  return config;
+});
+
+axios.interceptors.response.use(
+  function logResponseInterceptor(response) {
     console.log('Response Interceptor:', response);
     return response;
-    },
-    function logResponseErrorInterceptor(error) {
+  },
+  function logResponseErrorInterceptor(error) {
     console.log('Response Interceptor Error:', error);
     return Promise.reject(error);
-    }
-    );
+  }
+);

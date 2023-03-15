@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DreamingTeamDev/d-t.git"
+    "url": "git+https://github.com/DreamingTeamDev/d-t"
   },
   "keywords": [],
   "author": "Denys Yefimov <efirnet@gmail.com>",
@@ -18,6 +18,7 @@
     "url": "https://github.com/DreamingTeamDev/d-t/issues"
   },
   "dependencies": {
+    "caniuse-lite": "^1.0.30001466",
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
