@@ -6,7 +6,7 @@ const formFields = {
   name: document.getElementById('name'),
   email: document.getElementById('email'),
   phone: document.getElementById('phone'),
-  message: document.getElementById('message')
+  message: document.getElementById('message'),
 };
 
 // Функция для очистки полей формы после отправки сообщения
@@ -33,16 +33,17 @@ function handleFormSubmitError(error) {
 // Функция для отправки формы
 function submitForm(event) {
   event.preventDefault();
-
   const formData = {
     name: formFields.name.value ?? '',
     email: formFields.email.value ?? '',
     phone: formFields.phone.value ?? '',
     message: formFields.message.value ?? '',
   };
-
   try {
-    const response = axios.post('https://m-ojdg.onrender.com/api/feedback', formData);
+    const response = axios.post(
+      'https://m-ojdg.onrender.com/api/feedback',
+      formData
+    );
     handleFormSubmitSuccess(response);
   } catch (error) {
     handleFormSubmitError(error);
