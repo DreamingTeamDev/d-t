@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 const form = document.getElementById('feed-form');
 
@@ -40,10 +40,7 @@ function submitForm(event) {
     message: formFields.message.value ?? '',
   };
   try {
-    const response = axios.post(
-      'https://m-ojdg.onrender.com/api/feedback',
-      formData
-    );
+    const response = axios.post('https://m-ojdg.onrender.com/api/feedback', formData);
     handleFormSubmitSuccess(response);
   } catch (error) {
     handleFormSubmitError(error);
